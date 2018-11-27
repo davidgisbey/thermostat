@@ -25,4 +25,11 @@ describe("Thermostat", function() {
       expect(thermostat._temperature).toBe(10);
     });
   });
+
+  describe("Power Saving mode", function() {
+    it("Has a max temp of 25 degrees when ON", function(){
+      thermostat._powersavemode(true);
+      expect(thermostat.increaseTemp(6)).toThrowError('Maximum temperature has been exceeded')
+    });
+  });
 });
