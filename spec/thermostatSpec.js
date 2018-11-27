@@ -15,9 +15,9 @@ describe("Thermostat", function() {
   });
 
   describe("Temperature control", function() {
-    it("temperature is increased by 10", function() {
-      thermostat.increaseTemp(10);
-      expect(thermostat._temperature).toBe(30);
+    it("temperature is increased by 5", function() {
+      thermostat.increaseTemp(5);
+      expect(thermostat._temperature).toBe(25);
     });
 
     it("temperature is decreased by 10", function() {
@@ -28,8 +28,18 @@ describe("Thermostat", function() {
 
   describe("Power Saving mode", function() {
     it("Has a max temp of 25 degrees when ON", function(){
-      thermostat._powersavemode(true);
-      expect(thermostat.increaseTemp(6)).toThrowError('Maximum temperature has been exceeded')
+      thermostat.powersaveon(true);
+      expect(function(){thermostat.increaseTemp(6);}).toThrowError('Maximum temperature has been exceeded')
+    });
+
+    it("has a max temp if 32 degress when off", function() {
+      thermostat.powersaveoff();
+      thermostat.increaseTemp(10)
+      expect(function(){thermostat.increaseTemp(3);}).toThrowError('Maximum temperature has been exceeded')
+    });
+
+    it("on by default", function() {
+    expect(thermostat._powersavemode).toEqual(true)
     });
   });
 });
