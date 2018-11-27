@@ -24,6 +24,12 @@ describe("Thermostat", function() {
       thermostat.decreaseTemp(10);
       expect(thermostat._temperature).toBe(10);
     });
+
+    it("temperature can be reset to default", function () {
+      thermostat.increaseTemp(5);
+      thermostat.reset();
+      expect(thermostat._temperature).toBe(20);
+    });
   });
 
   describe("Power Saving mode", function() {

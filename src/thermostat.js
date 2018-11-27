@@ -20,6 +20,10 @@ this._powersavemode = true;
    }
  };
 
+  Thermostat.prototype.reset = function() {
+    this._temperature = 20;
+  };
+
   Thermostat.prototype.powersaveon = function() {
     this._powersavemode = true;
   };
