@@ -1,13 +1,15 @@
 function Thermostat() {
 this._temperature = 20;
-this._powersavemode = true;
+this._powerSaveMode = true;
+
+ };
 
 
   Thermostat.prototype.increaseTemp = function(amount) {
-    if (this._powersavemode === true && this._temperature + amount < 26) {
-      this._temperature += amount;
-    } else if (this._powersavemode === false && this._temperature + amount < 33) {
-      this._temperature += amount;
+    if (this._powerSaveMode === true && this._temperature + amount < 26) {
+        this._temperature += amount;
+    } else if (this._powerSaveMode === false && this._temperature + amount < 33) {
+        this._temperature += amount;
     } else { throw new Error("Maximum temperature has been exceeded");
    }
   };
@@ -24,12 +26,20 @@ this._powersavemode = true;
     this._temperature = 20;
   };
 
-  Thermostat.prototype.powersaveon = function() {
-    this._powersavemode = true;
+  Thermostat.prototype.powerSaveOn = function() {
+    this._powerSaveMode = true;
   };
 
-  Thermostat.prototype.powersaveoff = function() {
-    this._powersavemode = false;
+  Thermostat.prototype.powerSaveOff = function() {
+    this._powerSaveMode = false;
   };
 
+  Thermostat.prototype.powerUsage = function() {
+     if(this._temperature < 18) {
+      return "low-usage";
+   } else if(this._temperature >18 && this._temperature < 24) {
+      return "medium-usage";
+   } else {
+      return "high-usage";
+   }
 };
