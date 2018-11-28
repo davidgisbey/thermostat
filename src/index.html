@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Thermostat</title>
+  </head>
+  <body>
+    <div class="temperature">
+      <label for=""> Temperature:
+      <h1> this._temperature </h1>
+      </label>
+  </div>
+  <div class="">
+    <label for=""> Temperature control:
+    <form  class="change_temperature" action="index.html" method="post">
+      <button type="button" name="temp_up" value="up">up</button>
+      <button type="button" name="temp_down" value="down">down</button>
+        </form>
+        </label>
+  </div>
+  <div class="reset_temperature">
+    <label for="reset_temp">
+    <form class="" action="index.html" method="post">
+      <button type="button" name="temp_reset" value="reset">reset</button>
+    </form>
+    </label>
+  </div>
+  <div class="psm">
+    <form class="" action="index.html" method="post">
+      <label for="psm_on"> on
+        <input type="radio" name="psm_button" value="on">
+      </label> off
+      <label for="psm_off">
+      <input type="radio" name="psm_button" value="off">
+      </label>
+    </form>
+  </div>
+  </body>
+</html>
