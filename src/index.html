@@ -3,12 +3,14 @@
     <meta charset="utf-8">
     <title>Thermostat</title>
   </head>
+
   <body>
     <div class="temperature">
       <label for=""> Temperature:
       <h1> this._temperature </h1>
       </label>
   </div>
+
   <div class="">
     <label for=""> Temperature control:
     <form  class="change_temperature" action="index.html" method="post">
@@ -17,13 +19,15 @@
         </form>
         </label>
   </div>
+
   <div class="reset_temperature">
     <label for="reset_temp">
-    <form class="" action="index.html" method="post">
+    <form class="reset" id="reset" action="index.html" method="post">
       <button type="button" name="temp_reset" value="reset">reset</button>
     </form>
     </label>
   </div>
+
   <div class="psm">
     <form class="" action="index.html" method="post">
       <label for="psm_on"> on
@@ -34,5 +38,10 @@
       </label>
     </form>
   </div>
+
+  <script src="jquery-3.3.1.min.js"></script>
+  <script src="thermostat_jquery.js"></script>
+
+
   </body>
 </html>
