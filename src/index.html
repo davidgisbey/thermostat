@@ -2,20 +2,23 @@
   <head>
     <meta charset="utf-8">
     <title>Thermostat</title>
+
+    <link rel="stylesheet" href="thermostat_css.css">
+
   </head>
 
   <body>
     <div class="temperature">
       <label for=""> Temperature:
-      <h1> this._temperature </h1>
+      <h1 id="temperature"> this._temperature </h1>
       </label>
   </div>
 
   <div class="">
     <label for=""> Temperature control:
     <form  class="change_temperature" action="index.html" method="post">
-      <button type="button" name="temp_up" value="up">up</button>
-      <button type="button" name="temp_down" value="down">down</button>
+      <button type="button" name="temp_up" id="temp_up" value="up">up</button>
+      <button type="button" name="temp_down" id="temp_down" value="down">down</button>
         </form>
         </label>
   </div>
@@ -31,15 +34,16 @@
   <div class="psm">
     <form class="" action="index.html" method="post">
       <label for="psm_on"> on
-        <input type="radio" name="psm_button" value="on">
+        <input type="radio" id="psm_on" name="psm_button" value="on" checked="checked">
       </label> off
       <label for="psm_off">
-      <input type="radio" name="psm_button" value="off">
+      <input type="radio" id="psm_off" name="psm_button" value="off">
       </label>
     </form>
   </div>
 
   <script src="jquery-3.3.1.min.js"></script>
+  <script src="thermostat.js"></script>
   <script src="thermostat_jquery.js"></script>
 
 

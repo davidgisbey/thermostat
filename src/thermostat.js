@@ -41,7 +41,7 @@ this._powerSaveMode = true;
   Thermostat.prototype.powerUsage = function() {
      if(this._temperature < 18) {
       return "low-usage";
-   } else if(this._temperature >18 && this._temperature < 24) {
+   } else if(this._temperature >= 18 && this._temperature < 24) {
       return "medium-usage";
    } else {
       return "high-usage";
